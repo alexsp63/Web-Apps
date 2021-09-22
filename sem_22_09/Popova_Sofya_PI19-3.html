@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+</head>
+ 
+<style>
+    body {
+        background: url("https://phonoteka.org/uploads/posts/2021-05/1620053489_16-phonoteka_org-p-zoo-fon-19.jpg");
+        background-size: 100%;
+        margin: 100px;
+        }
+    form {
+        padding: 50px;
+        background: transparent;
+        position: fixed; top: 50%; left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+    h1, h2, p, input {
+        text-align: center;
+        }
+    button {
+        align-items: center;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: rgb(182, 255, 255);
+    }
+</style>
+
+<body>
+
+<form class='surveyForm'>
+  <h1>Good Vibes Form</h1>
+  <h2>Tell me smth positive</h2><br>
+  <p>Name: <input type="text" placeholder="Enter ur name"><br></p>
+  <p>Email: <input type="text" placeholder="Enter ur email"><br></p> 
+  <p>How good is ur day? (rate from 1 to 10) <input type="number" placeholder="Enter ur rate" min="1" max="10"><br></p>
+  <p>Where was it? <select id='sel'>
+    <option>Home</option>
+    <option>Work</option>
+    <option>Study</option>
+    <option>Other</option>
+  </select><br></p>
+  <p>At what time it happened?<p><input type="radio"> Morning</p>
+  <p><input type="radio"> Afternoon</p>
+  <p><input type="radio"> Evening</p></p>
+  <p>How did u feel?<br>Select several options<p><input type="checkbox"> Excelent</p>
+  <p><input type="checkbox"> Good</p>
+  <p><input type="checkbox"> Bad</p>
+  <p><input type="checkbox"> Sleepy</p></p>
+  <p>Please describe ur positive experience <textarea type="text" placeholder="Share us"></textarea><br></p>
+  <button id='submit'>Submit</button>
+
+ </form>
+
+ </body>
+</html>
