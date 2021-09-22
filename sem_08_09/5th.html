@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+function f() {
+  window.alert("Это alert!");
+  document.open();
+  document.write(5+6);
+  document.close();
+  console.log("log");
+}
+function f1() {
+  window.alert("Это alert2!");
+  document.open();
+  document.write(5+7);
+  document.close();
+  console.log("log1");
+}
+</script>
+</head>
+<body>
+
+<h2>Что умеет Ява-скрипт?</h2>
+<p>Ява-скрипт может показывать скрытые HTML элементы.</p>
+<p id="demo" style="display:none">Привет, Ява-скрипт!</p>
+<button type="button" onclick="f()">Нажимай!</button>
+<button type="button" onclick="f1()">Нажимай!!!</button>
+</body>
+</html>
