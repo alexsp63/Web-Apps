@@ -1,0 +1,33 @@
+<script>
+    function fc() {
+        col = $('#c').val();
+        document.body.style.background = col;
+    }
+    function f1() {
+        x = $('#x').val()
+        $('#x').val($('#y').val())
+        $('#y').val(x)
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+
+<style>
+    body {
+            background: #4242eb;
+            background-size: 100%;
+        }
+    p {
+            color: rgb(0, 7, 7);
+            font-size: 20px;
+    }
+</style>
+
+<p>Попова Софья ПИ19-3 задача №20</p><br>
+<p>На форме элемент кнопка и 2 элементы ввода. По кнопке меняются местами введенные числа.</p>
+<br>x = <input id='x' type='number' value=10>
+<br>y = <input id='y' type='number' value=20>
+<br><input type='button' 
+onclick="f1()"
+value='Exchange'><br>
+<input id='c' type='color' onchange='fc()'>

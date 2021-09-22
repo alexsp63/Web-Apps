@@ -1,0 +1,98 @@
+<script>
+    function f1() {
+
+    $("#tab").remove()
+    //document.getElementsByClassName('checkbox').remove()
+
+    var table = $('<table id="tab" border="1"/>')
+    var columnsCount = $('#inp').val()
+    var rowsCount = 1
+
+    var arr = [];
+
+    for (var i = 0; i < rowsCount; i++) {
+        var row = $('<tr/>')
+
+        for (var j = 0; j < columnsCount; j++) {
+            var cell = $('<td/>')
+            arr.push(j+1)
+
+            cell.html(arr[j])
+            row.append(cell)
+        }
+
+        table.append(row)
+    }
+
+    table.appendTo('body');
+    for (var i = 0; i < columnsCount; i++) {
+    $('<input />', {
+        type : 'checkbox',
+        class: 'checkbox',
+        id: 'id' + i,
+        value: i + 1
+    })
+    .appendTo("#c"); 
+    }
+}
+    function f2() {
+        var checkboxes = document.getElementsByClassName('checkbox');
+        var checkboxesCheckedValue; 
+        for (var index = 0; index < checkboxes.length; index++) {
+            if (checkboxes[index].checked) {
+                checkboxesCheckedValue = +checkboxes[index].value; 
+            }
+        }
+        var rows = document.getElementById('tab').rows
+        var col = rows[0].cells
+        var z = col[+checkboxesCheckedValue-1].innerHTML
+
+        console.log(z)
+        var new_z = (-1)*(+z)
+        col[+checkboxesCheckedValue-1].innerHTML = new_z
+
+        for (var index = 0; index < checkboxes.length; index++) {
+            checkboxes[index].checked = false
+        }
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+
+<style>
+    body {
+        background: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1612964853_67-p-nezhno-rozovie-oblaka-fon-76.jpg");
+        background-size: 100%;
+        margin: 100px;
+        }
+    p {
+        color: rgb(0, 7, 7);
+        font-size: 20px;
+        font-weight: bolder;
+        }
+    #inp {
+        background-color: rgb(226, 226, 226);
+        width: 250px;
+        height: 40px;
+        font-size: 20px;
+        }
+    button {
+        width: 250px;
+        height: 40px;
+        font-size: 20px;
+    }       
+    td {
+        width: 14px;
+        text-align: center;
+        font-size: 18px;
+    }
+</style>
+
+<p>Попова Софья ПИ19-3 задача №20</p>
+<p> (а) TABLE из одного строки, несколько флажков (по числу ячеек) </p>
+<p> (б)В элементе INPUT выбрать число ячеек.</p>
+<p> (в)При отметке флажка значение соответствующей ячейки инвертируется
+    Значения ячеек заданы в массиве</p>
+<br><p>Введите количество стобцов: </p><input id="inp" type="number">
+<br><button id="create" onclick="f1()">Create</button>
+<form id="c" onclick="f2()"></form>
